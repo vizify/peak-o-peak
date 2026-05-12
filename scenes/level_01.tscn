@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ds4cl7h24gcha"]
+[gd_scene load_steps=5 format=3 uid="uid://m5bcvsl0hwgh"]
 
 [ext_resource type="PackedScene" uid="uid://d1tycwkquf676" path="res://scenes/Player0.tscn" id="2_4lj41"]
 [ext_resource type="Texture2D" uid="uid://bhjeosxd4ng8t" path="res://asssets/temp/placeholder32.png" id="2_mofoo"]
@@ -1466,18 +1466,18 @@ texture = ExtResource("2_mofoo")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nr3cb")
 
-[node name="Game" type="Node2D" unique_id=1475501661]
+[node name="Game" type="Node2D"]
 position = Vector2(57, 301)
 
-[node name="Player" parent="." unique_id=2030051388 instance=ExtResource("2_4lj41")]
+[node name="Player" parent="." instance=ExtResource("2_4lj41")]
 position = Vector2(169, -119)
 
-[node name="TileMap" type="TileMap" parent="." unique_id=482089407]
+[node name="TileMap" type="TileMap" parent="."]
 position = Vector2(249, 41)
 tile_set = SubResource("TileSet_j60wy")
 format = 2
 layer_0/tile_data = PackedInt32Array(-131079, 524288, 18, -131078, 589824, 18, -131077, 655360, 18, -131076, 720896, 18, -131075, 786432, 18, -196610, 524288, 18, -262143, 524288, 18, -393213, 524288, 18, -393212, 524288, 18, -393211, 524288, 18, -524281, 524288, 18, -524280, 524288, 18, -524279, 524288, 18, -196597, 524288, 18, -196596, 524288, 18, -196595, 524288, 18, -196594, 1048576, 18, -196593, 1048576, 18, -327665, 1441792, 26, -262129, 1441792, 27, -327664, 1507328, 26, -262128, 1507328, 27, -458737, 1441792, 26, -393201, 1441792, 27, -458736, 1507328, 26, -393200, 1507328, 27, -262142, 262144, 18, -196592, 262144, 18, -196591, 262144, 18, -196590, 262144, 18)
 
-[node name="Camera2D" type="Camera2D" parent="TileMap" unique_id=458146892]
+[node name="Camera2D" type="Camera2D" parent="TileMap"]
 position = Vector2(111, -102)
 zoom = Vector2(2, 2)
