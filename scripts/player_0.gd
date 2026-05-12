@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
 
-const SPEED : float = 200.0
+const SPEED : float = 500
 const JUMP_VELOCITY : float = -500.0
 const GRAVITY_MULTIPLIER : float = 2.0
+
+var in_win_zone = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -22,5 +24,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	move_and_slide()
+	
+	if in_win_zone and Input.is_action_just_pressed("jump"):
+		win()
+
+func win():
+	print("You Win!")

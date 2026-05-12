@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="Peak-o-peak"
+run/main_scene="uid://j2l7rt51sq4o"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/vsync/vsync_mode=0
+
+[global_group]
+
+player=""
 
 [input]
 
@@ -40,3 +49,8 @@ pause={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":6,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_8="Win_zone"
