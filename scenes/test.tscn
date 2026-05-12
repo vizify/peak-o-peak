@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d1tycwkquf676" path="res://scenes/Player0.tscn" id="1_bl13t"]
 [ext_resource type="Texture2D" uid="uid://dp7l3cnh06ss4" path="res://asssets/temp/orange.png" id="2_iyx0m"]
 [ext_resource type="Texture2D" uid="uid://cpicrt7phyeib" path="res://asssets/temp/placeholder64.png" id="3_iyx0m"]
-[ext_resource type="PackedScene" path="res://scenes/door.tscn" id="4_74lek"]
+[ext_resource type="PackedScene" uid="uid://c668ce7quu476" path="res://scenes/door.tscn" id="4_74lek"]
 [ext_resource type="PackedScene" uid="uid://bw7kebg6ngmnl" path="res://scenes/box.tscn" id="5_j5jx5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
@@ -2976,3 +2976,5 @@ position = Vector2(1096, 544)
 
 [node name="Box" parent="." unique_id=1477571142 groups=["object"] instance=ExtResource("5_j5jx5")]
 position = Vector2(314, 437)
+mass = 2.0
+linear_damp = 4.0

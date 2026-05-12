@@ -8,8 +8,10 @@
 size = Vector2(260.5, 248.5)
 
 [node name="Box" type="RigidBody2D" unique_id=1477571142]
+mass = 5.358
 physics_material_override = SubResource("PhysicsMaterial_ks2v0")
 gravity_scale = 0.0
+linear_damp = 4.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=244764753]
 position = Vector2(75, 70)
