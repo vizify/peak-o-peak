@@ -27,6 +27,13 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider.is_in_group("object"):
+			collider.apply_central_impulse(-collision.get_normal())
+			
+	
 	if in_win_zone and Input.is_action_just_pressed("jump"):
 		win()
 
