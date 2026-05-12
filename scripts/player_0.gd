@@ -6,6 +6,8 @@ const JUMP_VELOCITY : float = -500.0
 const GRAVITY_MULTIPLIER : float = 2.0
 
 var in_win_zone = false
+var has_key = false
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -34,7 +36,7 @@ func _physics_process(delta: float) -> void:
 			collider.apply_central_impulse(-collision.get_normal())
 			
 	
-	if in_win_zone and Input.is_action_just_pressed("jump"):
+	if in_win_zone and Input.is_action_just_pressed("jump") and has_key:
 		win()
 
 func win():
