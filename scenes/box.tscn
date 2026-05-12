@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://bw7kebg6ngmnl"]
+[gd_scene format=3 uid="uid://bw7kebg6ngmnl"]
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_3inec"]
 
@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2ln5"]
 size = Vector2(260.5, 248.5)
 
-[node name="RigidBody2D" type="RigidBody2D" unique_id=1477571142]
+[node name="Box" type="RigidBody2D" unique_id=1477571142]
 physics_material_override = SubResource("PhysicsMaterial_ks2v0")
 gravity_scale = 0.0
 
