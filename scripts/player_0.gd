@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
-		if collider.is_in_group("object"):
+		if collider.is_in_group("object") and !collider.freeze:
 			collider.apply_central_impulse(-collision.get_normal() * 10)
 			
 	

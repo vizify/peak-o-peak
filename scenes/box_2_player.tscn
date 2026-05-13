@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cysyf8tf1u53h"]
+
+[ext_resource type="Texture2D" uid="uid://ctfl0l3b4gtwp" path="res://asssets/temp/cyan.png" id="1_g08b7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g08b7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84vwl"]
+size = Vector2(64, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pi3c"]
+size = Vector2(90, 83)
+
+[node name="Box2player" type="RigidBody2D" unique_id=1512670412 groups=["object"]]
+physics_material_override = SubResource("PhysicsMaterial_g08b7")
+gravity_scale = 0.0
+linear_damp = 4.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=305777249]
+texture = ExtResource("1_g08b7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2090646272]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_84vwl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=789041231]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=82978360]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_6pi3c")
