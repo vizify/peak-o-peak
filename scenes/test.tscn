@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://j2l7rt51sq4o"]
+[gd_scene load_steps=12 format=3 uid="uid://j2l7rt51sq4o"]
 
 [ext_resource type="PackedScene" uid="uid://d1tycwkquf676" path="res://scenes/Player0.tscn" id="1_bl13t"]
 [ext_resource type="Texture2D" uid="uid://dp7l3cnh06ss4" path="res://asssets/temp/orange.png" id="2_iyx0m"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c668ce7quu476" path="res://scenes/door.tscn" id="4_74lek"]
 [ext_resource type="PackedScene" uid="uid://bw7kebg6ngmnl" path="res://scenes/box.tscn" id="5_j5jx5"]
 [ext_resource type="PackedScene" uid="uid://yxhpthrnwp3r" path="res://scenes/key.tscn" id="6_lpvoh"]
+[ext_resource type="PackedScene" uid="uid://caal1gu8emx4m" path="res://scenes/api_ui.tscn" id="7_jcd4p"]
+[ext_resource type="Script" uid="uid://owfhkby11oib" path="res://scripts/multiplayer_spawner.gd" id="8_uacia"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
 texture = ExtResource("2_iyx0m")
@@ -2964,9 +2966,6 @@ sources/1 = SubResource("TileSetAtlasSource_j5jx5")
 
 [node name="Test" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_bl13t")]
-position = Vector2(131, 549)
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_j5jx5")
 format = 2
@@ -2976,7 +2975,15 @@ layer_0/tile_data = PackedInt32Array(2555910, 131072, 3, 2555911, 196608, 3, 255
 position = Vector2(624, 542)
 
 [node name="Box" parent="." groups=["object"] instance=ExtResource("5_j5jx5")]
-position = Vector2(405, 438)
+position = Vector2(373, 441)
 
 [node name="Key" parent="." instance=ExtResource("6_lpvoh")]
 position = Vector2(201, 497)
+
+[node name="API" parent="." instance=ExtResource("7_jcd4p")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://d1tycwkquf676")
+spawn_path = NodePath("..")
+script = ExtResource("8_uacia")
+network_player = ExtResource("1_bl13t")
