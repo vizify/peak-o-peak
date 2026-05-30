@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cnyaqyijtu25r"]
+
+[ext_resource type="Script" uid="uid://cuqftl0fjd0t2" path="res://scripts/LevelSelection.gd" id="1_mfh3d"]
+
+[node name="Control" type="Control" unique_id=1230831347]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mfh3d")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1781525961]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.78431374, 0.8235294, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=221729147]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="level_title" type="Label" parent="ColorRect/CenterContainer" unique_id=854066347]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/font_size = 80
+text = "level"
+
+[node name="CenterContainer2" type="CenterContainer" parent="ColorRect" unique_id=1441196388]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/CenterContainer2" unique_id=765099527]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer2/HBoxContainer" unique_id=759012171]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="level1" type="Button" parent="ColorRect/CenterContainer2/HBoxContainer/MarginContainer" unique_id=123679598]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+text = "level 1"
+flat = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/CenterContainer2/HBoxContainer" unique_id=1719809218]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="level2" type="Button" parent="ColorRect/CenterContainer2/HBoxContainer/MarginContainer2" unique_id=1943834893]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+text = "level 2"
+flat = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/CenterContainer2/HBoxContainer" unique_id=1685654103]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="level3" type="Button" parent="ColorRect/CenterContainer2/HBoxContainer/MarginContainer3" unique_id=1402730410]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+text = "level 3"
+flat = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="ColorRect/CenterContainer2/HBoxContainer" unique_id=983067013]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="level4" type="Button" parent="ColorRect/CenterContainer2/HBoxContainer/MarginContainer4" unique_id=271588494]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+text = "level 4"
+flat = true
