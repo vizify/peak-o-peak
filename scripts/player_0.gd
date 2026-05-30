@@ -7,10 +7,16 @@ const GRAVITY_MULTIPLIER : float = 2.0
 
 var in_win_zone = false
 var has_key = false
+var was_on_floor = false
 
+func _enter_tree() -> void:
+	set_multiplayer_authority(name.to_int())
 
 func _physics_process(delta: float) -> void:
+	if !is_multiplayer_authority(): return
+	
 	# Add the gravity.
+	was_on_floor = is_on_floor()
 	if not is_on_floor():
 		velocity += get_gravity() * delta * GRAVITY_MULTIPLIER
 
@@ -36,7 +42,7 @@ func _physics_process(delta: float) -> void:
 			collider.apply_central_impulse(-collision.get_normal() * 10)
 			
 	
-	if in_win_zone and Input.is_action_just_pressed("jump") and has_key:
+	if in_win_zone and Input.is_action_just_pressed("jump") and has_key and was_on_floor:
 		win()
 
 func win():
