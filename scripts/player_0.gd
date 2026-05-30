@@ -1,13 +1,17 @@
 extends CharacterBody2D
 
-
 const SPEED : float = 500
 const JUMP_VELOCITY : float = -500.0
 const GRAVITY_MULTIPLIER : float = 2.0
+const SPAWN_POS : Vector2 = Vector2(100, 200)
 
 var in_win_zone = false
 var has_key = false
 var was_on_floor = false
+
+func _ready() -> void:
+	if is_multiplayer_authority():
+		position = SPAWN_POS
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
