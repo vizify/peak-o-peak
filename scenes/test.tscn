@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c668ce7quu476" path="res://scenes/door.tscn" id="4_74lek"]
 [ext_resource type="PackedScene" uid="uid://bw7kebg6ngmnl" path="res://scenes/box.tscn" id="5_j5jx5"]
 [ext_resource type="PackedScene" uid="uid://yxhpthrnwp3r" path="res://scenes/key.tscn" id="6_lpvoh"]
-[ext_resource type="PackedScene" uid="uid://caal1gu8emx4m" path="res://scenes/api_ui.tscn" id="7_jcd4p"]
-[ext_resource type="Script" uid="uid://owfhkby11oib" path="res://scripts/multiplayer_spawner.gd" id="8_uacia"]
+[ext_resource type="PackedScene" uid="uid://cy77a22t4dgfo" path="res://scenes/api_ui.tscn" id="7_jcd4p"]
+[ext_resource type="Script" path="res://scripts/multiplayer_spawner.gd" id="8_uacia"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
 texture = ExtResource("2_iyx0m")
