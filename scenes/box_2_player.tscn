@@ -8,7 +8,7 @@
 size = Vector2(64, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pi3c"]
-size = Vector2(90, 83)
+size = Vector2(100, 91)
 
 [node name="Box2player" type="RigidBody2D" unique_id=1512670412 groups=["object"]]
 physics_material_override = SubResource("PhysicsMaterial_g08b7")
@@ -25,5 +25,5 @@ shape = SubResource("RectangleShape2D_84vwl")
 [node name="Area2D" type="Area2D" parent="." unique_id=789041231]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=82978360]
-position = Vector2(-1, 1)
+position = Vector2(-1, 1.5)
 shape = SubResource("RectangleShape2D_6pi3c")
