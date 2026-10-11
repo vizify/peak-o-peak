@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var required_players: int = 2
+@export var required_players: int = 1
 
 #Area2D-Node als Kind der Box, um Spieler in der Nähe zu zählen
 @onready var interaction_area: Area2D = $Area2D

@@ -12,11 +12,15 @@ size = Vector2(64, 58)
 size = Vector2(100, 91)
 
 [node name="Box2player" type="RigidBody2D" unique_id=1512670412 groups=["object"]]
+collision_layer = 8
+collision_mask = 3
+mass = 19.071
 physics_material_override = SubResource("PhysicsMaterial_g08b7")
-gravity_scale = 0.0
+gravity_scale = 1.984
+continuous_cd = 1
 contact_monitor = true
 max_contacts_reported = 4
-linear_damp = 4.0
+linear_damp = 5.748
 script = ExtResource("1_84vwl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=305777249]
@@ -27,6 +31,8 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_84vwl")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=789041231]
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=82978360]
 position = Vector2(-1, 1.5)

@@ -2977,7 +2977,10 @@ layer_0/tile_data = PackedInt32Array(2555910, 131072, 3, 2555911, 196608, 3, 255
 position = Vector2(1096, 544)
 
 [node name="Box" parent="." unique_id=1827433515 groups=["object"] instance=ExtResource("5_j5jx5")]
-position = Vector2(307, 472)
+position = Vector2(-32, 458)
+mass = 10.188
+linear_damp = 5.232
+angular_damp = 4.106
 
 [node name="Key" parent="." unique_id=2043671441 instance=ExtResource("6_lpvoh")]
 position = Vector2(201, 497)
@@ -2986,5 +2989,3 @@ position = Vector2(201, 497)
 position = Vector2(282, 498)
 gravity_scale = 1.0
 lock_rotation = true
-contact_monitor = true
-max_contacts_reported = 4
