@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cysyf8tf1u53h"]
 
+[ext_resource type="Script" uid="uid://okoywaref6a4" path="res://scripts/box.gd" id="1_84vwl"]
 [ext_resource type="Texture2D" uid="uid://ctfl0l3b4gtwp" path="res://asssets/temp/cyan.png" id="1_g08b7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g08b7"]
@@ -13,7 +14,10 @@ size = Vector2(100, 91)
 [node name="Box2player" type="RigidBody2D" unique_id=1512670412 groups=["object"]]
 physics_material_override = SubResource("PhysicsMaterial_g08b7")
 gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 4
 linear_damp = 4.0
+script = ExtResource("1_84vwl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=305777249]
 texture = ExtResource("1_g08b7")

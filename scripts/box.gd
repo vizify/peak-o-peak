@@ -1,31 +1,39 @@
 extends RigidBody2D
 
 @export var required_players: int = 2
-var players_pushing: int = 0
+
+#Area2D-Node als Kind der Box, um Spieler in der Nähe zu zählen
+@onready var interaction_area: Area2D = $Area2D
 
 func _ready():
-	# Start completely unfrozen so it drops immediately
 	freeze = false
 	sleeping = false
 	lock_rotation = true
 
 func _physics_process(delta):
-	# Get a list of everything physically touching the box right now
-	var colliding_bodies = get_colliding_bodies()
+	# Zähle, wie viele Spieler sich im Erfassungsbereich (Area2D) befinden
+	var overlapping_bodies = interaction_area.get_overlapping_bodies()
+	var current_players = 0
 	
-	var is_touching_ground = false
-	for body in colliding_bodies:
-		if not body.is_in_group("player"):
-			is_touching_ground = true
-			break
+	for body in overlapping_bodies:
+		if body.is_in_group("player"):
+			current_players += 1
 
-	# IF 2+ players are pushing, ALWAYS let it move
-	if players_pushing >= required_players:
+	# Logik: Wenn genug Spieler da sind, befreien wir die Box
+	if current_players >= required_players:
 		freeze = false
 		sleeping = false
 	else:
-		# If there aren't enough players, ONLY freeze it if it has landed on the ground
-		if is_touching_ground:
+		# Wichtig: contact_monitor muss im RigidBody aktiviert sein!
+		if is_on_ground():
 			freeze = true
 		else:
-			freeze = false # Keeps it falling through the air if it hasn't hit the ground yet
+			freeze = false
+
+# Hilfsfunktion zur sauberen Boden-Erkennung
+func is_on_ground() -> bool:
+	for body in get_colliding_bodies():
+		if not body.is_in_group("player"):
+			# Optional: Prüfen, ob die Kollision von unten kommt (Boden)
+			return true
+	return false
