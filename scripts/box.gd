@@ -1,3 +1,4 @@
+class_name Box
 extends RigidBody2D
 
 
@@ -5,7 +6,10 @@ extends RigidBody2D
 var players_pushing: int = 0
 
 func _ready():
+	set_multiplayer_authority(1)
 	freeze = true
+	if not multiplayer.is_server():
+		set_physics_process(false)
 
 
 func _physics_process(delta):

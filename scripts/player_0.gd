@@ -42,8 +42,10 @@ func _physics_process(delta: float) -> void:
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
-		if collider.is_in_group("object") and !collider.freeze:
-			collider.apply_central_impulse(-collision.get_normal() * 10)
+		if is_instance_valid(collider) and collider.is_in_group("object") and !collider.freeze:
+			print("sending push rpc to: ", collider.get_path())
+			var spawner = get_node("/root/Test/MultiplayerSpawner")
+			collider.rpc("push_object", collider.get_path(), -collision.get_normal() * 10)
 			
 	
 	if in_win_zone and Input.is_action_just_pressed("jump") and has_key and was_on_floor:
