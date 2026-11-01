@@ -1,5 +1,7 @@
 extends Node
 
+signal server_started
+
 const IP_ADDRESS: String = "localhost"
 const PORT : int = 30055
 const MAX_CLIENT: int = 10

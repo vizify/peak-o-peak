@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
+	$MultiplayerSynchronizer.set_multiplayer_authority(name.to_int())
 
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
