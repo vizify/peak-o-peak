@@ -2980,14 +2980,6 @@ position = Vector2(373, 441)
 [node name="Key" parent="." instance=ExtResource("6_lpvoh")]
 position = Vector2(201, 497)
 
-<<<<<<< HEAD
-[node name="Box2player" parent="." unique_id=1512670412 instance=ExtResource("7_at5dv")]
-position = Vector2(282, 498)
-gravity_scale = 1.0
-lock_rotation = true
-contact_monitor = true
-max_contacts_reported = 4
-=======
 [node name="API" parent="." instance=ExtResource("7_jcd4p")]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
@@ -2995,4 +2987,3 @@ _spawnable_scenes = PackedStringArray("uid://d1tycwkquf676")
 spawn_path = NodePath("..")
 script = ExtResource("8_uacia")
 network_player = ExtResource("1_bl13t")
->>>>>>> e5ef7ff5cc31c43e1a0fb93111be5f9428e2e0cf
