@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Peak-o-peak"
-run/main_scene="uid://rucpjs3ln65y"
+run/main_scene="uid://j2l7rt51sq4o"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
