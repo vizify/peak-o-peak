@@ -1,14 +1,15 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	%play.pressed.connect(play)
+	%Host.pressed.connect(_on_host_pressed)
+	%Join.pressed.connect(_on_join_pressed)
+	
+# Called when the node enters the scene tree for the first time.
+func _on_host_pressed() -> void:
+	Networkhandler.start_server()
+	get_tree().change_scene_to_file("res://scenes/LevelSelection.tscn") #host chooses lvl
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func play():
-	get_tree().change_scene_to_file('res://scenes/LevelSelection.tscn')
+func _on_join_pressed() -> void:
+	Networkhandler.start_client("localhost")
+	%title.text = "Waiting for Host..."

@@ -11,11 +11,22 @@ var was_on_floor = false
 
 func _ready() -> void:
 	if is_multiplayer_authority():
-		position = SPAWN_POS
+		var base_pos := SPAWN_POS
+		var spawner = get_parent().get_node_or_null("MultiplayerSpawner")
+		if spawner and "spawn_pos" in spawner:
+			base_pos = spawner.spawn_pos
+		if position == Vector2.ZERO or position == base_pos:
+			var peers := [multiplayer.get_unique_id()]
+			for p in multiplayer.get_peers():
+				peers.append(p)
+			peers.sort()
+			var idx := peers.find(name.to_int())
+			if idx < 0:
+				idx = 0
+			position = base_pos + Vector2(idx * 45.0, 0.0)
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
-	$MultiplayerSynchronizer.set_multiplayer_authority(name.to_int())
 
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
