@@ -1,27 +1,39 @@
-class_name Box
 extends RigidBody2D
 
-
 @export var required_players: int = 2
-var players_pushing: int = 0
+
+#Area2D-Node als Kind der Box, um Spieler in der Nähe zu zählen
+@onready var interaction_area: Area2D = $Area2D
 
 func _ready():
-	set_multiplayer_authority(1)
-	freeze = true
-	if not multiplayer.is_server():
-		set_physics_process(false)
-
+	freeze = false
+	sleeping = false
+	lock_rotation = true
 
 func _physics_process(delta):
-	if players_pushing >= required_players:
+	# Zähle, wie viele Spieler sich im Erfassungsbereich (Area2D) befinden
+	var overlapping_bodies = interaction_area.get_overlapping_bodies()
+	var current_players = 0
+	
+	for body in overlapping_bodies:
+		if body.is_in_group("player"):
+			current_players += 1
+
+	# Logik: Wenn genug Spieler da sind, befreien wir die Box
+	if current_players >= required_players:
 		freeze = false
+		sleeping = false
 	else:
-		freeze = true
+		# Wichtig: contact_monitor muss im RigidBody aktiviert sein!
+		if is_on_ground():
+			freeze = true
+		else:
+			freeze = false
 
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("player"):
-		players_pushing += 1
-
-func _on_area_2d_body_exited(body):
-	if body.is_in_group("player"):
-		players_pushing -= 1
+# Hilfsfunktion zur sauberen Boden-Erkennung
+func is_on_ground() -> bool:
+	for body in get_colliding_bodies():
+		if not body.is_in_group("player"):
+			# Optional: Prüfen, ob die Kollision von unten kommt (Boden)
+			return true
+	return false
